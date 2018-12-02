@@ -1,0 +1,22 @@
+{
+    "name": "pountech/ticket",
+    "authors": [
+        {
+            "name": "abdurrahman tarek",
+            "email": "abdurrahmantarek2@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pountech\\Ticket\\Providers\\TicketServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Pountech\\Ticket\\": "src/"
+        }
+    }
+}
