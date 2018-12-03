@@ -7,8 +7,6 @@ use Pountech\Ticket\Commands\InstallCommand;
 
 class TicketServiceProvider extends ServiceProvider
 {
-    private $packagePath = __DIR__. '/../';
-
     /**
      * Bootstrap services.
      *
@@ -17,7 +15,7 @@ class TicketServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            $this->packagePath. '/Migrations/' => database_path('migrations')
+            __DIR__. '/../Migrations/' => database_path('migrations')
         ], 'ticket');
     }
 
@@ -36,7 +34,7 @@ class TicketServiceProvider extends ServiceProvider
 
     private function registerConsoleCommands()
     {
-        $this->commands(InstallCommand::class); //
+        $this->commands(InstallCommand::class);
     }
 
 }
