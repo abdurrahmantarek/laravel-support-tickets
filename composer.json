@@ -1,7 +1,7 @@
 {
-    "name": "pountech/ticket",
+    "name": "pountech/laravel-support-tickets",
     "description": "ticketing system laravel based",
-    "keywords" : ["Simple laravel tickets","Laravel tickets"],
+    "keywords" : ["Simple laravel tickets","Laravel tickets", "support tickets"],
     "type": "library",
     "authors": [
         {
