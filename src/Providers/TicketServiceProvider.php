@@ -3,9 +3,12 @@
 namespace Pountech\Ticket\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Pountech\Ticket\Commands\InstallCommand;
 
 class TicketServiceProvider extends ServiceProvider
 {
+    private $packagePath = __DIR__. '/../';
+
     /**
      * Bootstrap services.
      *
@@ -13,10 +16,9 @@ class TicketServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__. '/../Migrations');
         $this->publishes([
-            __DIR__.'/../Migrations/' => database_path('migrations')
-        ], 'ticket_migrations');
+            $this->packagePath. '/Migrations/' => database_path('migrations')
+        ], 'ticket');
     }
 
     /**
@@ -26,7 +28,15 @@ class TicketServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if ($this->app->runningInConsole()) {
+            $this->registerConsoleCommands();
+        }
+    }
 
+
+    private function registerConsoleCommands()
+    {
+        $this->commands(InstallCommand::class); //
     }
 
 }
