@@ -65,5 +65,4 @@ trait TicketOptions
     {
         return ($this->user->id == $this->answer['from']) ? $this->agent->id : $this->user->id;
     }
-
 }
