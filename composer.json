@@ -1,5 +1,8 @@
 {
     "name": "pountech/ticket",
+    "description": "ticketing system laravel based",
+    "keywords" : ["Simple laravel tickets","Laravel tickets"],
+    "type": "library",
     "authors": [
         {
             "name": "abdurrahman tarek",
