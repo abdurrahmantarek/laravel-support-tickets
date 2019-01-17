@@ -3,7 +3,7 @@
 namespace Pountech\Ticket\Traits;
 
 use App\User;
-use Pountech\Ticket\Models\TicketAnswer;
+use Pountech\Ticket\Models\TicketMessage;
 
 trait TicketOptions
 {
@@ -38,7 +38,7 @@ trait TicketOptions
             $this->answer = $answer;
             return $this->answerATakenTicket();
         }
-        return TicketAnswer::create([
+        return TicketMessage::create([
             'ticket_id' => $this->id,
             'to' => null,
             'from' => $answer['from'],
@@ -53,7 +53,7 @@ trait TicketOptions
 
     public function answerATakenTicket()
     {
-        return TicketAnswer::create([
+        return TicketMessage::create([
             'ticket_id' => $this->id,
             'to' => $this->redirectTo(),
             'from' => $this->answer['from'],

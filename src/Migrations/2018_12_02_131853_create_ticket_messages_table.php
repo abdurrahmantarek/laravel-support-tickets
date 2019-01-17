@@ -13,7 +13,7 @@ class CreateTicketAnswersTable extends Migration
      */
     public function up()
     {
-        Schema::create('ticket_answers', function (Blueprint $table) {
+        Schema::create('ticket_messages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ticket_id');
             $table->integer('from');
@@ -30,6 +30,6 @@ class CreateTicketAnswersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket_answers');
+        Schema::dropIfExists('ticket_messages');
     }
 }

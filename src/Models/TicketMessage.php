@@ -6,7 +6,7 @@ use App\User;
 use Pountech\Ticket\Models\Ticket;
 use Illuminate\Database\Eloquent\Model;
 
-class TicketAnswer extends Model
+class TicketMessage extends Model
 {
     protected $fillable = [
         'ticket_id',
