@@ -3,7 +3,7 @@
 namespace Pountech\Ticket\Models;
 
 use App\User;
-use Pountech\Ticket\Models\TicketAnswer;
+use Pountech\Ticket\Models\TicketMessage;
 use Pountech\Ticket\Traits\TicketOptions;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,9 +19,9 @@ class Ticket extends Model
         'status',
     ];
 
-    public function answers()
+    public function messages()
     {
-        return $this->hasMany(TicketAnswer::class);
+        return $this->hasMany(TicketMessage::class);
     }
 
     public function user()
